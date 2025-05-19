@@ -1,0 +1,74 @@
+# This file is part of AnsiCards.
+#
+# AnsiCards is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# AnsiCards is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with AnsiCards.  If not, see <http://www.gnu.org/licenses/>.
+#
+# Copyright (C) 2025 Dante Doménech Martínez
+
+# Doxyfile 1.8.20
+
+# Project related configuration options
+PROJECT_NAME           = "Ansii Cards"
+PROJECT_BRIEF          = "A library for working with cards in an ansii terminal."
+# Path to a logo image
+PROJECT_LOGO           = "resources/logo.jpeg"  
+# Output directory for generated documentation
+OUTPUT_DIRECTORY       = "docs"           
+# Create subdirectories for output files
+CREATE_SUBDIRS         = YES                   
+
+# Input related configuration options
+# Input directory for source files
+INPUT                  = .                    
+# File patterns to include
+FILE_PATTERNS          = *.h *.cpp          
+# Recursively search for files in subdirectories
+RECURSIVE              = YES                    
+
+# Build related configuration options
+# Generate HTML documentation
+GENERATE_HTML          = YES                    
+# Output directory for HTML files
+HTML_OUTPUT            = ./html                      
+# Optional: Path to HTML header file
+# HTML_HEADER            = ""                     
+# Optional: Path to HTML footer file
+# HTML_FOOTER            = ""                     
+# Optional: Path to extra CSS file
+# HTML_EXTRA_STYLESHEET  = ""                     
+
+# Configuration for the generated documentation
+# Generate a tree view in HTML
+GENERATE_TREEVIEW      = YES                    
+# Do not generate XML output
+GENERATE_XML           = NO                     
+# Do not generate LaTeX output
+GENERATE_LATEX         = NO                     
+
+# Other options
+# Extract all entities
+EXTRACT_ALL            = YES                    
+# Include private members in documentation
+EXTRACT_PRIVATE        = YES                    
+# Include static members in documentation
+EXTRACT_STATIC         = YES                    
+# Use full path names in output
+FULL_PATH_NAMES        = YES                    
+# Strip this path from output
+STRIP_FROM_PATH        = src                    
+
+# Optional: Customization options
+# Add timestamp to HTML output
+HTML_TIMESTAMP         = YES                    
+
+# End of Doxyfile
