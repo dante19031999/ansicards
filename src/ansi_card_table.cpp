@@ -26,7 +26,7 @@ namespace ac
 
     static inline const ansi_card_renderer *renderer(const ansi_card_renderer *pRenderer)
     {
-        return pRenderer == nullptr ? pRenderer : ansi_card_table::DEFAULT_RENDERER;
+        return pRenderer != nullptr ? pRenderer : ansi_card_table::DEFAULT_RENDERER;
     }
 
     ansi_card_table::ansi_card_table(const ansi_card_renderer *pRenderer, bool bRenderOnChange)
