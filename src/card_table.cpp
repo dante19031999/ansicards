@@ -37,6 +37,9 @@ namespace ac
 
     void card_table::render() const
     {
+        if (this->m_pRenderer == nullptr)
+            return;
+
         this->m_pRenderer->render_table();
         for (auto oHolder : this->m_lCards)
         {
