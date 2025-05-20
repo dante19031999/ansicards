@@ -17,25 +17,14 @@
  * Copyright (C) 2025 Dante Doménech Martínez
  */
 
-#include "ansi_card_table.h"
-#include "suit.h"
+#include "card_holder.h"
 
 namespace ac
 {
 
-    const ansi_card_renderer *ansi_card_table::DEFAULT_RENDERER = new ansi_card_renderer();
-
-    static inline const ansi_card_renderer *renderer(const ansi_card_renderer *pRenderer)
-    {
-        return pRenderer != nullptr ? pRenderer : ansi_card_table::DEFAULT_RENDERER;
-    }
-
-    ansi_card_table::ansi_card_table(const ansi_card_renderer *pRenderer, bool bRenderOnChange)
-        : card_table(renderer(pRenderer), bRenderOnChange) {}
-
-    void ansi_card_table::set_renderer(const ansi_card_renderer *pRenderer)
-    {
-        card_table::set_renderer(renderer(pRenderer));
-    }
+    card_holder::card_holder(const number *pCard, point oPos, bool bVisible)
+        : m_pCard(pCard),
+          m_oPos(oPos),
+          m_bVisible(bVisible) {}
 
 } // namespace ac

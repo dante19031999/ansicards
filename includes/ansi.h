@@ -33,22 +33,22 @@ namespace ac
      */
     enum class ansi_color
     {
-        BLACK = 30,          ///< Black nColor
-        RED = 31,            ///< Red nColor
-        GREEN = 32,          ///< Green nColor
-        YELLOW = 33,         ///< Yellow nColor
-        BLUE = 34,           ///< Blue nColor
-        MAGENTA = 35,        ///< Magenta nColor
-        CYAN = 36,           ///< Cyan nColor
-        WHITE = 37,          ///< White nColor
-        BRIGHT_BLACK = 90,   ///< Bright black nColor
-        BRIGHT_RED = 91,     ///< Bright red nColor
-        BRIGHT_GREEN = 92,   ///< Bright green nColor
-        BRIGHT_YELLOW = 93,  ///< Bright yellow nColor
-        BRIGHT_BLUE = 94,    ///< Bright blue nColor
-        BRIGHT_MAGENTA = 95, ///< Bright magenta nColor
-        BRIGHT_CYAN = 96,    ///< Bright cyan nColor
-        BRIGHT_WHITE = 97,   ///< Bright white nColor
+        BLACK = 30,          ///< Black color
+        RED = 31,            ///< Red color
+        GREEN = 32,          ///< Green color
+        YELLOW = 33,         ///< Yellow color
+        BLUE = 34,           ///< Blue color
+        MAGENTA = 35,        ///< Magenta color
+        CYAN = 36,           ///< Cyan color
+        WHITE = 37,          ///< White color
+        BRIGHT_BLACK = 90,   ///< Bright black color
+        BRIGHT_RED = 91,     ///< Bright red color
+        BRIGHT_GREEN = 92,   ///< Bright green color
+        BRIGHT_YELLOW = 93,  ///< Bright yellow color
+        BRIGHT_BLUE = 94,    ///< Bright blue color
+        BRIGHT_MAGENTA = 95, ///< Bright magenta color
+        BRIGHT_CYAN = 96,    ///< Bright cyan color
+        BRIGHT_WHITE = 97,   ///< Bright white color
     };
 
     namespace ansi

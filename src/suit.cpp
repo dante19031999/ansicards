@@ -98,7 +98,7 @@ namespace ac
         return vSuits;
     }
 
-    std::size_t suit::get_number_count()
+    std::size_t suit::get_number_count() const noexcept
     {
         std::lock_guard<std::mutex> oLock(this->m_oMutex);
         return this->m_mNumbers.size();

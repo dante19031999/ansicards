@@ -25,8 +25,8 @@
 #pragma once
 
 #include <list>
-#include "card.h"
 #include "card_renderer.h"
+#include "card_holder.h"
 
 namespace ac
 {
@@ -104,6 +104,32 @@ namespace ac
          */
         void set_renderer(const card_renderer *pRenderer);
 
+        /**
+         * @brief Gets the card holders.
+         *
+         * @param pRenderer A list of card holders.
+         */
+        std::list<card_holder> get_holders() const;
+
+    protected:
+        /**
+         * @brief Gets the current card renderer.
+         * This version does not lock the mutex.
+         * To use from card_table::render.
+         *
+         * @return A pointer to the current card_renderer object.
+         */
+        const card_renderer *get_renderer_unlocked() const;
+
+        /**
+         * @brief Gets the card holders.
+         *
+         * @param pRenderer A list of card holders.
+         * This version does not lock the mutex.
+         * To use from card_table::render.
+         */
+        std::list<card_holder> get_holders_unlocked() const;
+
     public:
         /**
          * @brief Places a card on the table at the specified position.
@@ -126,6 +152,11 @@ namespace ac
          * @param pCard Pointer to the card to be removed.
          */
         void remove_card(const number *pCard);
+
+        /**
+         * @brief Removes all cards from the table if it is found.
+         */
+        void remove_all_cards();
 
     public:
         /**
@@ -268,20 +299,6 @@ namespace ac
          *                 If the card is not on the table, this function will do nothing.
          */
         void set_card_visible(const number *pCard, bool bVisible);
-
-    public:
-        /**
-         * @struct class_holder
-         * @brief A structure to hold card information and its position.
-         *
-         * This structure contains the x and y coordinates of the card and a pointer to the card itself.
-         */
-        struct card_holder
-        {
-            point m_oPos;          ///< The horizontal coordinate of the card.
-            const number *m_pCard; ///< Pointer to the card.
-            bool m_bVisible;       ///< Visibility of the card
-        };
 
     protected:
         mutable std::mutex m_oMutex; ///< Mutex for multithread applications

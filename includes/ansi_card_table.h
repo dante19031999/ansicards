@@ -59,8 +59,6 @@ namespace ac
          */
         void set_renderer(const ansi_card_renderer *pRenderer);
 
-    private:
-        ansi_card_renderer *m_pRenderer; ///< A pointer to the current ANSI card renderer.
     };
 
 } // namespace ac

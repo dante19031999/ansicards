@@ -134,7 +134,7 @@ namespace ac
         return vSuits;
     }
 
-    std::size_t deck::get_suit_count()
+    std::size_t deck::get_suit_count() const noexcept
     {
         std::lock_guard<std::mutex> oLock(this->m_oMutex);
         return this->m_mSuits.size();
@@ -200,6 +200,7 @@ namespace ac
         {
             const suit *pSuit = oIter.second;
             std::vector<const number *> vSuitNumbers = pSuit->get_numbers();
+            vNumbers.reserve(vNumbers.size() + vSuitNumbers.size());
             vNumbers.insert(vNumbers.end(), vSuitNumbers.begin(), vSuitNumbers.end());
         }
         return vNumbers;
@@ -218,7 +219,7 @@ namespace ac
         return vNumbers;
     }
 
-    std::size_t deck::get_number_count()
+    std::size_t deck::get_number_count() const noexcept
     {
         std::lock_guard<std::mutex> oLock(this->m_oMutex);
         std::size_t nNumbers = 0;

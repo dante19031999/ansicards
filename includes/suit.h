@@ -131,7 +131,7 @@ namespace ac
          *
          * @return The total number of numbers stored.
          */
-        std::size_t get_number_count();
+        std::size_t get_number_count() const noexcept;
 
     public:
         /**

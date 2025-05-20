@@ -55,7 +55,7 @@ namespace ac
          * @brief The default width of the table.
          * This constant defines the default width of the table where cards are rendered.
          */
-        static constexpr std::size_t DEFAULT_TABLE_WIDTH = 150;
+        static constexpr std::size_t DEFAULT_TABLE_WIDTH = 100;
 
         /**
          * @brief The default height of the table.

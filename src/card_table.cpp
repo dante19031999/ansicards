@@ -66,6 +66,11 @@ namespace ac
         this->m_bRenderOnChange = bRenderOnChange;
     }
 
+      const card_renderer *card_table::get_renderer_unlocked() const
+    {
+        return this->m_pRenderer;
+    }
+
     const card_renderer *card_table::get_renderer() const
     {
         std::lock_guard<std::mutex> oLock(this->m_oMutex);
@@ -76,6 +81,17 @@ namespace ac
     {
         std::lock_guard<std::mutex> oLock(this->m_oMutex);
         this->m_pRenderer = pRenderer;
+    }
+
+    std::list<card_holder> card_table::get_holders_unlocked() const
+    {
+        return this->m_lCards;
+    }
+
+    std::list<card_holder> card_table::get_holders() const
+    {
+        std::lock_guard<std::mutex> oLock(this->m_oMutex);
+        return this->m_lCards;
     }
 
     void card_table::stack_card(const number *pCard, const point &oPos)
@@ -91,8 +107,7 @@ namespace ac
                                  { return oHolder.m_pCard == pCard; });
 
         // Add card
-        card_holder oHolder = {oPos, pCard, true};
-        this->m_lCards.push_back(oHolder);
+        this->m_lCards.emplace_back(pCard, oPos, true);
 
         // Render
         if (this->m_bRenderOnChange)
@@ -138,6 +153,19 @@ namespace ac
 
         // Render
         if (nSize != this->m_lCards.size() && this->m_bRenderOnChange)
+            this->render();
+    }
+
+    void card_table::remove_all_cards()
+    {
+        std::lock_guard<std::mutex> oLock(this->m_oMutex);
+        bool bEmpty = this->m_lCards.empty();
+
+        // Clear cards
+        this->m_lCards.clear();
+
+        // Render
+        if (!bEmpty && this->m_bRenderOnChange)
             this->render();
     }
 
