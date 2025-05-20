@@ -23,7 +23,7 @@ namespace ac
 {
 
     card::card(const number *pNumber)
-    : m_pNumber(m_pNumber) {}
+        : m_pNumber(pNumber) {}
 
     bool card::operator==(const card &oCard) const noexcept
     {
@@ -33,6 +33,21 @@ namespace ac
     bool card::operator!=(const card &oCard) const noexcept
     {
         return this->m_pNumber == oCard.m_pNumber;
+    }
+
+    std::weak_ordering card::operator<=>(const card &oCard) const
+    {
+        return this->compare(oCard);
+    }
+
+    card::operator const number *() const noexcept
+    {
+        return this->m_pNumber;
+    }
+
+    const number *card::get_number()
+    {
+        return this->m_pNumber;
     }
 
 } // namespace ac
