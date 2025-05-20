@@ -31,7 +31,9 @@ namespace ac
     namespace ansi
     {
 
+#ifdef _WIN32
         static int ansi_to_windows_color(ansi_color nColor);
+#endif
 
         void set_ansi_foreground_color(ansi_color nColor)
         {
@@ -112,6 +114,7 @@ namespace ac
 #endif
         }
 
+#ifdef _WIN32
         int ansi_to_windows_color(ansi_color nColor)
         {
             switch (nColor)
@@ -152,6 +155,7 @@ namespace ac
                 return 7;
             }
         }
+#endif
 
     } // namespace ansi
 
