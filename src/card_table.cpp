@@ -66,7 +66,7 @@ namespace ac
         this->m_bRenderOnChange = bRenderOnChange;
     }
 
-      const card_renderer *card_table::get_renderer_unlocked() const
+    const card_renderer *card_table::get_renderer_unlocked() const
     {
         return this->m_pRenderer;
     }
