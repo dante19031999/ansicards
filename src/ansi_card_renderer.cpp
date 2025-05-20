@@ -266,9 +266,9 @@ namespace ac
     void ansi_card_renderer::set_card_height(std::size_t nHeight)
     {
         if (nHeight < 4 || nHeight > 100)
-            this->m_nTableHeight = ansi_card_renderer::DEFAULT_CARD_HEIGHT;
+            this->m_nCardHeight = ansi_card_renderer::DEFAULT_CARD_HEIGHT;
         else
-            this->m_nTableHeight = nHeight;
+            this->m_nCardHeight = nHeight;
     }
 
     void ansi_card_renderer::set_table_width(std::size_t nWidth)
@@ -282,9 +282,9 @@ namespace ac
     void ansi_card_renderer::set_table_height(std::size_t nHeight)
     {
         if (nHeight < 20 || nHeight > 1000)
-            this->m_nCardHeight = ansi_card_renderer::DEFAULT_TABLE_HEIGHT;
+            this->m_nTableHeight = ansi_card_renderer::DEFAULT_TABLE_HEIGHT;
         else
-            this->m_nCardHeight = nHeight;
+            this->m_nTableHeight = nHeight;
     }
 
     void ansi_card_renderer::set_clubs_color(ansi_color nColor)
