@@ -21,7 +21,7 @@
 
 using namespace ac;
 
-int main(int, char)
+int main(int, char**)
 {
     example::display_poker_deck();
 
