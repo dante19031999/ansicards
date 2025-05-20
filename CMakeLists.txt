@@ -78,7 +78,7 @@ set(BASE_SOURCES
 
 # Deal with the example if INCLUDE_EXAMPLE is "TRUE"
 if(INCLUDE_EXAMPLE STREQUAL "TRUE")
-    list(APPEND BASE_HEADERS ${SD}/src/example.h)
+    list(APPEND BASE_HEADERS ${SD}/includes/example.h)
     list(APPEND BASE_SOURCES ${SD}/src/example.cpp)
 endif()
 
